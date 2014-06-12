@@ -26,6 +26,7 @@ public class SimpleConnection {
             System.out.println("Logged in as :" + admin.getEventContext().userName);
         } finally {
             client.__del__();
+            System.exit(0);
         }
     }
 }
