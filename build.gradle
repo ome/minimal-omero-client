@@ -27,6 +27,7 @@ dependencies {
         exclude group: 'ome', module: 'bio-formats'
         exclude group: 'org.springframework.ldap', module: 'spring-ldap'
         exclude group: 'org.testng', module: 'testng'
+        exclude group: 'hsqldb', module: 'hsqldb'
     }
 }
 
