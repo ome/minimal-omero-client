@@ -19,6 +19,10 @@ repositories {
     maven {
         url 'http://artifacts.openmicroscopy.org/artifactory/maven/'
     }
+    maven {
+        name 'ome.staging'
+        url 'http://artifacts.openmicroscopy.org/artifactory/simple/ome.staging'
+    }
 }
 
 dependencies {
