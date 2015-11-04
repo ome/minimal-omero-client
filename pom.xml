@@ -9,27 +9,42 @@
     <parent>
         <groupId>ome</groupId>
         <artifactId>pom-omero-client</artifactId>
-        <version>5.1.13</version>
+        <version>5.2.0</version>
     </parent>
 
     <groupId>com.example</groupId>
     <artifactId>MyClient</artifactId>
-    <version>5.1.12</version>
+    <version>5.2.0</version>
 
     <name>Example</name>
-    <description>An example maven project for connection to OMERO</description>
+    <description>An example maven project for connection to OMERO using the Java gateway.</description>
 
     <dependencies>
         <dependency>
           <groupId>omero</groupId>
           <artifactId>blitz</artifactId>
+          <version>5.2.0-ice35-b12</version>
         </dependency>
         <dependency>
           <groupId>ome</groupId>
           <artifactId>bioformats_package</artifactId>
         </dependency>
+        <dependency>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+          <version>2.5</version>
+        </dependency>
+        <dependency>
+          <groupId>commons-collections</groupId>
+          <artifactId>commons-collections</artifactId>
+          <version>3.2</version>
+        </dependency>
+        <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>17.0</version>
+        </dependency>
     </dependencies>
-
     <repositories>
         <repository>
           <id>ome.maven</id>
