@@ -7,14 +7,11 @@
  */
 package com.example;
 
-import java.util.Collection;
 
 import omero.gateway.Gateway;
 import omero.gateway.LoginCredentials;
 import omero.gateway.SecurityContext;
-import omero.gateway.facility.BrowseFacility;
 import omero.gateway.model.ExperimenterData;
-import omero.gateway.model.ProjectData;
 import omero.log.SimpleLogger;
 
 /**
@@ -22,13 +19,13 @@ import omero.log.SimpleLogger;
  *
  * @author The OME Team
  */
-public class SimpleConnection {
+public class Connect {
 
     /** Reference to the gateway.*/
-    private Gateway gateway;
+    Gateway gateway;
 
     /** The security context.*/
-    private SecurityContext ctx;
+    SecurityContext ctx;
 
     /** 
      * Creates a connection, the gateway will take care of the services
@@ -39,7 +36,7 @@ public class SimpleConnection {
      * @param userName The name of the user.
      * @param password The user's password.
      */
-    private void connect(String hostname, int port, String userName, String password)
+    void connect(String hostname, int port, String userName, String password)
         throws Exception
     {
         LoginCredentials cred = new LoginCredentials();
@@ -59,7 +56,7 @@ public class SimpleConnection {
      *
      * @param args The arguments used to connect.
      */
-    private void connect(String[] args)
+    void connect(String[] args)
         throws Exception
     {
         LoginCredentials cred = new LoginCredentials(args);
@@ -68,34 +65,28 @@ public class SimpleConnection {
     }
     
     /** Makes sure to disconnect to destroy sessions.*/
-    private void disconnect()
+    void disconnect()
     {
         gateway.disconnect();
     }
 
-    /** Loads the projects owned by the user currently logged in.*/
-    private void loadProjects()
-        throws Exception
-    {
-        BrowseFacility browse = gateway.getFacility(BrowseFacility.class);
-        Collection<ProjectData> projects = browse.getProjects(ctx);
-    }
-
     /** Creates a new instance.*/
-    SimpleConnection()
+    Connect()
     {
         gateway = new Gateway(new SimpleLogger());
     }
 
     /**
+     * The main method
+     * @param args The login credentials, in the form
+     *             ["--omero.host=localhost", "--omero.port=4064",
+     *              "--omero.user=root", "--omero.pass=omero"]
      */
-    public static void main(String[] args) throws Exception {
-        SimpleConnection client = new SimpleConnection();
+    public static void main(String[] args) {
+        Connect client = new Connect();
         try {
             client.connect(args);
             //Do something e.g. loading user's data.
-            //Load the projects/datasets owned by the user currently logged in.
-            client.loadProjects();
         } catch (Exception e) {
         } finally {
             client.disconnect();
