@@ -98,6 +98,7 @@ public class SimpleConnection {
             client.loadProjects();
             Thread.sleep(4000);
         } catch (Exception e) {
+            System.out.println(e);
         } finally {
             client.disconnect();
         }
