@@ -97,6 +97,7 @@ public class SimpleConnection {
             //Load the projects/datasets owned by the user currently logged in.
             client.loadProjects();
         } catch (Exception e) {
+            System.out.println(e);
         } finally {
             client.disconnect();
         }
