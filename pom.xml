@@ -63,6 +63,11 @@
           <id>ome.maven</id>
           <url>http://artifacts.openmicroscopy.org/artifactory/maven/</url>
         </repository>
+        <repository>
+          <id>unidata-releases</id>
+          <name>unidata-releases</name>
+          <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases</url>
+        </repository>
     </repositories>
 
     <build>
