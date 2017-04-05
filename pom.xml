@@ -9,12 +9,12 @@
     <parent>
         <groupId>ome</groupId>
         <artifactId>pom-omero-client</artifactId>
-        <version>5.2.13</version>
+        <version>5.3.1</version>
     </parent>
 
     <groupId>com.example</groupId>
     <artifactId>MyClient</artifactId>
-    <version>5.2.8</version>
+    <version>5.3.0</version>
 
     <name>Example</name>
     <description>An example maven project for connection to OMERO using the Java gateway.</description>
@@ -62,6 +62,16 @@
         <repository>
           <id>ome.maven</id>
           <url>http://artifacts.openmicroscopy.org/artifactory/maven/</url>
+        </repository>
+        <repository>
+          <id>unidata-releases</id>
+          <name>unidata-releases</name>
+          <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases</url>
+        </repository>
+        <repository>
+          <id>zeroc</id>
+          <name>zeroc</name>
+          <url>https://repo.zeroc.com/nexus/content/repositories/releases/</url>
         </repository>
     </repositories>
 
