@@ -52,20 +52,6 @@ public class SimpleConnection {
         ExperimenterData user = gateway.connect(cred);
         ctx = new SecurityContext(user.getGroupId());
     }
-
-    /** 
-     * Creates a connection, the gateway will take care of the services
-     * life-cycle.
-     *
-     * @param args The arguments used to connect.
-     */
-    private void connect(String[] args)
-        throws Exception
-    {
-        LoginCredentials cred = new LoginCredentials(args);
-        ExperimenterData user = gateway.connect(cred);
-        ctx = new SecurityContext(user.getGroupId());
-    }
     
     /** Makes sure to disconnect to destroy sessions.*/
     private void disconnect()
@@ -92,10 +78,31 @@ public class SimpleConnection {
     public static void main(String[] args) throws Exception {
         SimpleConnection client = new SimpleConnection();
         try {
-            client.connect(args);
-            //Do something e.g. loading user's data.
-            //Load the projects/datasets owned by the user currently logged in.
-            client.loadProjects();
+            String host = null;
+            int port = 4064;
+            String user = null;
+            String password = null;
+            for (String arg : args) {
+                String[] tmp = arg.split("=");
+                tmp[1].replace("'", "");
+                tmp[1].replace("\"", "");
+                if (tmp[0].trim().equals("--omero.host"))
+                    host = tmp[1].trim();
+                if (tmp[0].trim().equals("--omero.port"))
+                    port = Integer.parseInt(tmp[1].trim());
+                if (tmp[0].trim().equals("--omero.user"))
+                    user = tmp[1].trim();
+                if (tmp[0].trim().equals("--omero.pass"))
+                    password = tmp[1].trim();
+            }
+
+            if (host != null && user != null && password != null) {
+                client.connect(host, port, user, password);
+                // Do something e.g. loading user's data.
+                // Load the projects/datasets owned by the user currently logged
+                // in.
+                client.loadProjects();
+            }
         } catch (Exception e) {
             System.out.println(e);
         } finally {
