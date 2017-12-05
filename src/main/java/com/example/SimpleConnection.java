@@ -64,6 +64,7 @@ public class SimpleConnection {
     {
         LoginCredentials cred = new LoginCredentials(args);
         ExperimenterData user = gateway.connect(cred);
+        System.out.println("Connected as " + user.getUserName());
         ctx = new SecurityContext(user.getGroupId());
     }
     

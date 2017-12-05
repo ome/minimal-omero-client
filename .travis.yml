@@ -1,13 +1,9 @@
 language: java
 
-# This (sudo: false) is needed to "run on container-based infrastructure" on
-# which cache: is available
-# http://docs.travis-ci.com/user/workers/container-based-infrastructure/
-sudo: false
-
-env:
-  - BUILD=gradle
-  - BUILD=maven
+sudo: required
 
 before_install:
-  - if [[ $BUILD == 'maven' ]]; then rm build.gradle; fi
+  - git clone --recurse-submodules git://github.com/openmicroscopy/omero-test-infra .omero
+
+before_install:
+  - .omero/lib-docker
