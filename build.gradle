@@ -8,7 +8,7 @@ def javaOpts = [
     '-Xmx512M'
 ]
 
-version '5.4.5'
+version '5.4.7'
 
 repositories {
     mavenLocal()
@@ -22,14 +22,14 @@ repositories {
 }
 
 dependencies {
-    compile(group: 'ome', name: 'formats-gpl', version: '5.8.2'){
+    compile(group: 'ome', name: 'formats-gpl', version: '5.9.0'){
     }
-    compile(group: 'ome', name: 'formats-bsd', version: '5.8.2'){
+    compile(group: 'ome', name: 'formats-bsd', version: '5.9.0'){
     }
     compile(group: 'org.springframework.ldap', name: 'spring-ldap', version: '1.3.0.RELEASE', classifier: 'all'){
         exclude group: 'org.testng', module: 'testng'
     }
-    compile(group: 'omero', name: 'blitz', version: '5.4.6-ice36-b87') {
+    compile(group: 'omero', name: 'blitz', version: '5.4.7-ice36-b93') {
         exclude group: 'org.springframework.ldap', module: 'spring-ldap'
         exclude group: 'org.testng', module: 'testng'
         exclude group: 'hsqldb', module: 'hsqldb'
