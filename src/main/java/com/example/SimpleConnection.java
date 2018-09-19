@@ -9,13 +9,19 @@ package com.example;
 
 import java.util.Collection;
 
+import omero.api.ThumbnailStorePrx;
+import omero.sys.ParametersI;
+
 import omero.gateway.Gateway;
 import omero.gateway.LoginCredentials;
 import omero.gateway.SecurityContext;
 import omero.gateway.facility.BrowseFacility;
 import omero.gateway.model.ExperimenterData;
 import omero.gateway.model.ProjectData;
+import omero.gateway.model.ImageData;
+import omero.gateway.model.PixelsData;
 import omero.log.SimpleLogger;
+
 
 /**
  * A simple connection to an OMERO server using the Java gateway
@@ -82,6 +88,20 @@ public class SimpleConnection {
         Collection<ProjectData> projects = browse.getProjects(ctx);
     }
 
+    private void loadFirstImage()
+        throws Exception
+    {
+
+        ParametersI params = new ParametersI();
+        params.acquisitionData();
+        BrowseFacility browse = gateway.getFacility(BrowseFacility.class);
+        ImageData image = browse.getImage(ctx, 1L, params);
+        PixelsData pixels = image.getDefaultPixels();
+        ThumbnailStorePrx store = gateway.getThumbnailService(ctx);
+        store.setPixelsId(pixels.getId());
+        System.out.println("Ready to get thumbnail");
+    }
+
     /** Creates a new instance.*/
     SimpleConnection()
     {
@@ -97,8 +117,7 @@ public class SimpleConnection {
             //Do something e.g. loading user's data.
             //Load the projects/datasets owned by the user currently logged in.
             client.loadProjects();
-        } catch (Exception e) {
-            System.out.println(e);
+            client.loadFirstImage();
         } finally {
             client.disconnect();
         }
