@@ -88,10 +88,10 @@ public class SimpleConnection {
         Collection<ProjectData> projects = browse.getProjects(ctx);
     }
 
+    /** Loads the image with the id 1.*/
     private void loadFirstImage()
         throws Exception
     {
-
         ParametersI params = new ParametersI();
         params.acquisitionData();
         BrowseFacility browse = gateway.getFacility(BrowseFacility.class);
@@ -114,8 +114,8 @@ public class SimpleConnection {
         SimpleConnection client = new SimpleConnection();
         try {
             client.connect(args);
-            //Do something e.g. loading user's data.
-            //Load the projects/datasets owned by the user currently logged in.
+            // Do something e.g. loading user's data.
+            // Load the projects/datasets owned by the user currently logged in.
             client.loadProjects();
             client.loadFirstImage();
         } finally {
