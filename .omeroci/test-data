@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Set up the data structure needed for the tests
+
+set -e
+set -u
+set -x
+
+OMERO_DIST=${OMERO_DIST:-/opt/omero/server/OMERO.server}
+WORKDIR=$(mktemp -d)
+
+function cleanup {
+  rm -rf "$WORKDIR"
+  echo "Deleted temp working directory $WORKDIR"
+}
+
+trap cleanup EXIT
+
+export PATH=$PATH:${OMERO_DIST}/bin
+omero login root@localhost -w omero
+omero group add testGroup
+omero user add testUser Test User testGroup -P omero
+omero login testUser@localhost -w omero
+
+# create a simple project/dataset/image hierarchy
+DATASET=$(omero obj new Dataset name=TestDataset)
+PROJECT=$(omero obj new Project name=TestProject)
+omero obj new ProjectDatasetLink parent=$PROJECT child=$DATASET
+touch "$WORKDIR/8bit-unsigned&pixelType=uint8&sizeZ=3&sizeC=5&sizeT=7&sizeX=512&sizeY=512.fake"
+IMAGE=$(omero import --output=ids  "$WORKDIR/8bit-unsigned&pixelType=uint8&sizeZ=3&sizeC=5&sizeT=7&sizeX=512&sizeY=512.fake" -T Dataset:id:1)
+
+# Copied from rOMERO-gateway/.omeroci/test-data
+# Should this be the default value?
