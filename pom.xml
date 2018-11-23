@@ -35,17 +35,6 @@
     </dependencies>
     <profiles>
     <profile>
-      <id>ice35</id>
-      <activation>
-        <property>
-          <name>!ice</name>
-        </property>
-      </activation>
-      <properties>
-        <ice.version>ice35</ice.version>
-      </properties>
-    </profile>
-    <profile>
       <id>ice36</id>
       <activation>
         <property>
