@@ -38,8 +38,7 @@
       <id>ice36</id>
       <activation>
         <property>
-          <name>ice</name>
-          <value>36</value>
+          <name>!ice</name>
         </property>
       </activation>
       <properties>
