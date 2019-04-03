@@ -27,7 +27,7 @@ DATASET=$(omero obj new Dataset name=TestDataset)
 PROJECT=$(omero obj new Project name=TestProject)
 omero obj new ProjectDatasetLink parent=$PROJECT child=$DATASET
 touch "$WORKDIR/8bit-unsigned&pixelType=uint8&sizeZ=3&sizeC=5&sizeT=7&sizeX=512&sizeY=512.fake"
-IMAGE=$(omero import --output=ids  "$WORKDIR/8bit-unsigned&pixelType=uint8&sizeZ=3&sizeC=5&sizeT=7&sizeX=512&sizeY=512.fake" -T Dataset:id:1)
+IMAGE=$(omero import --skip=upgrade --output=ids  "$WORKDIR/8bit-unsigned&pixelType=uint8&sizeZ=3&sizeC=5&sizeT=7&sizeX=512&sizeY=512.fake" -T Dataset:id:1)
 
 # Copied from rOMERO-gateway/.omeroci/test-data
 # Should this be the default value?
