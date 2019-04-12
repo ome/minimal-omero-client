@@ -19,6 +19,6 @@ Install [Gradle](https://gradle.org/), and build this project:
 
 # Run
 
-    ./minimal-omero-client-5.4.10/bin/minimal-omero-client --omero.host=localhost --omero.user=USERNAME --omero.password=PASSWORD
+    ./minimal-omero-client-5.4.10/bin/minimal-omero-client --omero.host=localhost --omero.user=USERNAME --omero.pass=PASSWORD
 
 You can pass additional properties, e.g. to debug SSL issues pass `--IceSSL.Trace.Security=1`.
