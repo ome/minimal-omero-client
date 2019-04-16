@@ -47,5 +47,5 @@ startScripts {
 }
 
 run {
-    args Eval.me("['-f', '.']")
+    environment "ICE_CONFIG", "ice.config"
 }
