@@ -8,7 +8,9 @@ instructions to come!
 
 # Build
 
-Install [Gradle](https://gradle.org/), and build this project:
+    ./gradlew build
+
+Alternatively if you already have [Gradle](https://gradle.org/) installed:
 
     gradle build
 
