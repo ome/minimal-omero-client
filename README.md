@@ -25,7 +25,7 @@ You can pass additional properties, e.g. to debug SSL issues pass `--IceSSL.Trac
 
 # Using development CI libraries
 
-Gradle will not accept a self-signed HTTPS certificate so you must first setup a local proxy.
+Gradle will not accept a self-signed HTTPS certificate so you must first set up a local proxy.
 
 Create a file `mergeci58443.conf`:
 ```
@@ -39,7 +39,7 @@ server {
 ```
 Run
 ```
-docker run -it --rm -v$PWD/mergeci58443.conf:/etc/nginx/conf.d/default.conf:ro -p8080:8080 nginx`
+docker run -it --rm -v$PWD/mergeci58443.conf:/etc/nginx/conf.d/default.conf:ro -p8080:8080 nginx
 ```
 
 Make the following change to `build.gradle`, changing `version` to the CI version:
