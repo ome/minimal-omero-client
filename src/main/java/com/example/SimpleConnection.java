@@ -8,6 +8,7 @@
 package com.example;
 
 import java.util.Collection;
+import java.util.NoSuchElementException;
 
 import omero.api.ThumbnailStorePrx;
 import omero.sys.ParametersI;
@@ -95,11 +96,15 @@ public class SimpleConnection {
         ParametersI params = new ParametersI();
         params.acquisitionData();
         BrowseFacility browse = gateway.getFacility(BrowseFacility.class);
-        ImageData image = browse.getImage(ctx, 1L, params);
-        PixelsData pixels = image.getDefaultPixels();
-        ThumbnailStorePrx store = gateway.getThumbnailService(ctx);
-        store.setPixelsId(pixels.getId());
-        System.out.println("Ready to get thumbnail");
+        try {
+            ImageData image = browse.getImage(ctx, 1L, params);
+            PixelsData pixels = image.getDefaultPixels();
+            ThumbnailStorePrx store = gateway.getThumbnailService(ctx);
+            store.setPixelsId(pixels.getId());
+            System.out.println("Ready to get thumbnail");
+        } catch(NoSuchElementException e) {
+            System.out.println("Image:1 not found");
+        }
     }
 
     /** Creates a new instance.*/
