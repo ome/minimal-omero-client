@@ -3,7 +3,7 @@ language: java
 sudo: required
 
 before_install:
-  - git clone --recurse-submodules git://github.com/openmicroscopy/omero-test-infra .omero
+  - git clone --recurse-submodules git://github.com/ome/omero-test-infra .omero
 
 script:
   - .omero/lib-docker

@@ -6,59 +6,20 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>ome</groupId>
-        <artifactId>pom-omero-client</artifactId>
-        <version>5.4.10</version>
-    </parent>
-
     <groupId>com.example</groupId>
     <artifactId>MyClient</artifactId>
-    <version>5.4.10</version>
+    <version>5.5.0</version>
 
     <name>Example</name>
     <description>An example maven project for connection to OMERO using the Java gateway.</description>
 
     <dependencies>
         <dependency>
-          <groupId>omero</groupId>
-          <artifactId>blitz</artifactId>
-          <version>5.4.10-${ice.version}-b105</version>
-        </dependency>
-        <dependency>
-          <groupId>ome</groupId>
-          <artifactId>formats-bsd</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>ome</groupId>
-          <artifactId>formats-gpl</artifactId>
+          <groupId>org.openmicroscopy</groupId>
+          <artifactId>omero-gateway</artifactId>
+          <version>5.5.2</version>
         </dependency>
     </dependencies>
-    <profiles>
-    <profile>
-      <id>ice35</id>
-      <activation>
-        <property>
-          <name>!ice</name>
-        </property>
-      </activation>
-      <properties>
-        <ice.version>ice35</ice.version>
-      </properties>
-    </profile>
-    <profile>
-      <id>ice36</id>
-      <activation>
-        <property>
-          <name>ice</name>
-          <value>36</value>
-        </property>
-      </activation>
-      <properties>
-        <ice.version>ice36</ice.version>
-      </properties>
-    </profile>
-  </profiles>
     <repositories>
         <repository>
           <id>ome.maven</id>
