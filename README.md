@@ -25,27 +25,12 @@ You can pass additional properties, e.g. to debug SSL issues pass `--IceSSL.Trac
 
 # Using development CI libraries
 
-Gradle will not accept a self-signed HTTPS certificate so you must first set up a local proxy.
-
-Create a file `mergeci58443.conf`:
-```
-server {
-    listen       8080;
-    server_name  localhost;
-    location / {
-        proxy_pass https://merge-ci-devspace.openmicroscopy.org:58443;
-    }
-}
-```
-Run
-```
-docker run -it --rm -v$PWD/mergeci58443.conf:/etc/nginx/conf.d/default.conf:ro -p8080:8080 nginx
-```
+You can build against a development version of a library from the OME CI systems
 
 Make the following change to `build.gradle`, changing `version` to the CI version:
 ```diff
 diff --git a/build.gradle b/build.gradle
-index f832e8e..bafcf51 100644
+index f832e8e..206cdd1 100644
 --- a/build.gradle
 +++ b/build.gradle
 @@ -11,6 +11,9 @@ def javaOpts = [
@@ -53,8 +38,8 @@ index f832e8e..bafcf51 100644
 
  repositories {
 +    maven {
-+        name 'mergeci'
-+        url 'http://localhost:8080/nexus/repository/maven-internal/'}
++        name 'latestci'
++        url 'https://latest-ci.openmicroscopy.org/nexus/repository/maven-internal/'}
      mavenLocal()
      mavenCentral()
      maven {
