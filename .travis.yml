@@ -9,6 +9,7 @@ services:
 
 before_install:
   - git clone --recurse-submodules git://github.com/ome/omero-test-infra .omero
+  - mvn install
 
 script:
   - .omero/lib-docker
