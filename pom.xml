@@ -30,11 +30,6 @@
           <name>unidata-releases</name>
           <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases</url>
         </repository>
-        <repository>
-          <id>zeroc</id>
-          <name>zeroc</name>
-          <url>https://repo.zeroc.com/nexus/content/repositories/releases/</url>
-        </repository>
     </repositories>
 
     <build>
