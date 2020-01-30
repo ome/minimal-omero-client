@@ -50,7 +50,7 @@ public class SimpleConnection {
         throws Exception
     {
         LoginCredentials cred = new LoginCredentials();
-        cred.getServer().setHostname(hostname);
+        cred.getServer().setHost(hostname);
         if (port > 0) {
             cred.getServer().setPort(port);
         }
