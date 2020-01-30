@@ -11,6 +11,10 @@ Install [Gradle](https://gradle.org/), and build this project:
 
     gradle build
 
+## Run from source
+
+    gradle run --args="--omero.host=localhost --omero.user=USERNAME --omero.pass=PASSWORD"
+
 ## Install
 
     cd build/distributions
