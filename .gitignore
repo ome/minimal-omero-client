@@ -4,3 +4,6 @@
 /target/
 .*un~
 .omero
+build
+.gradle
+.env
