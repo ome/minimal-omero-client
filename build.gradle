@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    compile(group: 'org.openmicroscopy', name: 'omero-gateway', version: '5.6.2')
+    implementation("org.openmicroscopy:omero-gateway:5.6.2")
 }
 
 startScripts {
