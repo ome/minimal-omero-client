@@ -50,8 +50,8 @@ index f832e8e..206cdd1 100644
  }
 
  dependencies {
--    compile(group: 'org.openmicroscopy', name: 'omero-gateway', version: '5.5.2')
-+    compile(group: 'org.openmicroscopy', name: 'omero-gateway', version: '5.5.3-SNAPSHOT')
+-    implementation("org.openmicroscopy:omero-gateway:5.6.2")
++    implementation("org.openmicroscopy:omero-gateway:5.6.3-SNAPSHOT")
  }
 
  startScripts {
