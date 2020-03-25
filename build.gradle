@@ -1,14 +1,22 @@
-apply plugin: 'application'
-apply plugin: 'java'
+plugins {
+    id "application"
+    id "java"
+}
 
-mainClassName = 'com.example.SimpleConnection'
+ext {
+   javaMainClass = "com.example.SimpleConnection"
+}
+
+application {
+    mainClassName = javaMainClass
+}
 
 def javaOpts = [
     '-Dlog4j.configuration=log4j-cli.properties',
     '-Xmx512M'
 ]
 
-version '5.5.3'
+version = '5.5.3'
 
 repositories {
     mavenLocal()
