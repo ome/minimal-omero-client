@@ -16,7 +16,7 @@ def javaOpts = [
     '-Xmx512M'
 ]
 
-version = '5.5.3'
+version = '5.5.4'
 
 repositories {
     mavenLocal()
