@@ -1,14 +1,16 @@
-apply plugin: 'application'
-apply plugin: 'java'
+plugins {
+    id "application"
+    id "java"
+}
 
-mainClassName = 'com.example.SimpleConnection'
+mainClassName = "com.example.SimpleConnection"
 
 def javaOpts = [
     '-Dlog4j.configuration=log4j-cli.properties',
     '-Xmx512M'
 ]
 
-version '5.5.3'
+version = '5.5.4'
 
 repositories {
     mavenLocal()
@@ -22,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    compile(group: 'org.openmicroscopy', name: 'omero-gateway', version: '5.6.2')
+    implementation("org.openmicroscopy:omero-gateway:5.6.3")
 }
 
 startScripts {
