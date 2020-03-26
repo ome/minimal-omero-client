@@ -3,13 +3,7 @@ plugins {
     id "java"
 }
 
-ext {
-   javaMainClass = "com.example.SimpleConnection"
-}
-
-application {
-    mainClassName = javaMainClass
-}
+mainClassName = "com.example.SimpleConnection"
 
 def javaOpts = [
     '-Dlog4j.configuration=log4j-cli.properties',
