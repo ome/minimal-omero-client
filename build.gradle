@@ -10,7 +10,7 @@ def javaOpts = [
     '-Xmx512M'
 ]
 
-version = '5.5.4'
+version = '5.5.5'
 
 repositories {
     mavenLocal()
@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.openmicroscopy:omero-gateway:5.6.3")
+    implementation("org.openmicroscopy:omero-gateway:5.6.4")
 }
 
 startScripts {
