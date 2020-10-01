@@ -17,18 +17,13 @@
         <dependency>
           <groupId>org.openmicroscopy</groupId>
           <artifactId>omero-gateway</artifactId>
-          <version>5.6.3</version>
+          <version>5.6.5</version>
         </dependency>
     </dependencies>
     <repositories>
         <repository>
           <id>ome.maven</id>
           <url>https://artifacts.openmicroscopy.org/artifactory/maven/</url>
-        </repository>
-        <repository>
-          <id>unidata-releases</id>
-          <name>unidata-releases</name>
-          <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases</url>
         </repository>
     </repositories>
 
