@@ -1,6 +1,6 @@
-# Minimal OMERO client
+[![OMERO](https://github.com/ome/minimal-omero-client/workflows/OMERO/badge.svg)](https://github.com/ome/minimal-omero-client/actions)
 
-[![Build Status](https://travis-ci.org/ome/minimal-omero-client.svg)](https://travis-ci.org/ome/minimal-omero-client)
+# Minimal OMERO client
 
 Minimal Maven project for connecting to OMERO using the Java gateway based on
 https://github.com/imagej/minimal-ij1-plugin. Thanks to @dscho and @ctrueden for the original example.
