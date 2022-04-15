@@ -8,7 +8,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>MyClient</artifactId>
-    <version>5.5.4</version>
+    <version>5.5.5</version>
 
     <name>Example</name>
     <description>An example maven project for connection to OMERO using the Java gateway.</description>
@@ -22,7 +22,7 @@
         <dependency>
           <groupId>org.openmicroscopy</groupId>
           <artifactId>omero-gateway</artifactId>
-          <version>5.6.5</version>
+          <version>5.6.8</version>
         </dependency>
     </dependencies>
     <repositories>
