@@ -8,7 +8,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>MyClient</artifactId>
-    <version>5.5.5</version>
+    <version>5.5.6</version>
 
     <name>Example</name>
     <description>An example maven project for connection to OMERO using the Java gateway.</description>
@@ -22,13 +22,18 @@
         <dependency>
           <groupId>org.openmicroscopy</groupId>
           <artifactId>omero-gateway</artifactId>
-          <version>5.6.8</version>
+          <version>5.6.9</version>
         </dependency>
     </dependencies>
     <repositories>
         <repository>
           <id>ome.maven</id>
           <url>https://artifacts.openmicroscopy.org/artifactory/maven/</url>
+        </repository>
+        <repository>
+          <id>unidata.releases</id>
+          <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases</url>
+          <snapshots><enabled>false</enabled></snapshots>
         </repository>
     </repositories>
 
