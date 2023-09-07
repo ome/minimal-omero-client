@@ -8,7 +8,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>MyClient</artifactId>
-    <version>5.5.10</version>
+    <version>5.5.11</version>
 
     <name>Example</name>
     <description>An example maven project for connection to OMERO using the Java gateway.</description>
